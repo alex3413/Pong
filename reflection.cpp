@@ -1,8 +1,33 @@
 
 #include "OGLPong.h"
+reflection::reflection(float r ,float g ,float b){
+		red = r; green = g; blue = b;
+		vy=0;
+		y = 0;
+		up = false;
+		down = false;
+		hold = false;
+	}
+reflection::reflection(){
+		red=1.0f; green=1.0f; blue=1.0f;
+		vy=0;
+		y = 0;
+		up = false;
+		down = false;
+		hold = false;
+	}
+
+void reflection::draw(float r,float g,float b){
+	red = r; green = g; blue = b;
+	glColor3f(r,g,b);
+	glVertex2f(x+settings.pThickness,y+size/2);
+	glVertex2f(x+settings.pThickness,y-size/2);
+	glVertex2f(x-settings.pThickness,y-size/2);
+	glVertex2f(x-settings.pThickness,y+size/2);
+}
 
 void reflection::draw(){
-	glColor3f(1,1,1);
+	glColor3f(red,green,blue);
 	glVertex2f(x+settings.pThickness,y+size/2);
 	glVertex2f(x+settings.pThickness,y-size/2);
 	glVertex2f(x-settings.pThickness,y-size/2);

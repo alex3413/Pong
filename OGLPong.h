@@ -11,18 +11,17 @@ void Timer (int);
 
 class reflection{
 	public:
+		float red, green, blue;
 		float x,y;
 		float vy;
 		float size;
 		bool up,down,hold;
-	reflection(){
-		vy=0;
-		y = 0;
-		up = false;
-		down = false;
-		hold = false;
-	}
+	reflection(float ,float ,float);
+	reflection();
+	
+	void draw(float ,float ,float );
 	void draw();
+	
 	void move();
 	void care();
 };
@@ -89,6 +88,7 @@ class game{
 };
 class Ball{
 	public:
+		float r,g,b;
 		float x;
 		float y;
 		float vx;

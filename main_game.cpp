@@ -15,6 +15,7 @@ int main(int argc, char** argv) {
 	
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
+	settings.start_settings();
 	glutInitWindowPosition (settings.winXPos,settings.winYPos);
 	glutInitWindowSize(settings.winWid, settings.winHeid);
 	glutCreateWindow("Ping_POng");

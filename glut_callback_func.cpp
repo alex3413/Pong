@@ -49,10 +49,10 @@ void keyboardUpf(unsigned char key, int x,int y){
 void draw(){
 	glClear(GL_COLOR_BUFFER_BIT);
 	glBegin(GL_QUADS);
-	rightP.draw();
-	leftP.draw();
-	ball.draw();
-	settings.drawField();
+		rightP.draw(1,0,0);
+		leftP.draw(0,1,0);
+		ball.draw();
+		settings.drawField();
 	glEnd();
 	settings.drawScore();
 	glutSwapBuffers();
