@@ -1,13 +1,17 @@
 #pragma once
+#pragma comment(lib, ws2_32.lib)
 #include <GL/glut.h>
 #include<GL/freeglut.h>
 #include<GL/gl.h>
 #include <cstdlib>
 #include <math.h>
+#include <iostream>
+#include <winsock2.h>
 void keyboardf(unsigned char, int,int);
 void keyboardUpf(unsigned char, int,int);
 void draw();
 void Timer (int);
+void mainSocket(int);
 
 class reflection{
 	public:

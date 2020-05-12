@@ -11,7 +11,7 @@ ResourceIncludes=
 MakeIncludes=
 Compiler=
 CppCompiler=
-Linker=-lfreeglut_@@_-lopengl32_@@_-lglu32_@@_
+Linker=-lfreeglut_@@_-lopengl32_@@_-lglu32_@@_-lWs2_32_@@_-lWsock32_@@_
 IsCpp=1
 Icon=
 ExeOutput=
@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
-UnitCount=6
+UnitCount=7
 
 [VersionInfo]
 Major=1
@@ -102,6 +102,16 @@ BuildCmd=
 
 [Unit4]
 FileName=glut_callback_func.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=socket.cpp
 CompileCpp=1
 Folder=
 Compile=1

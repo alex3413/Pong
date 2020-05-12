@@ -1,6 +1,6 @@
-#include <iostream>
+
 #include "OGLPong.h"
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
 void Hide(){
   HWND Hide;
   AllocConsole(); 
@@ -11,7 +11,14 @@ game settings;
 Ball ball ;
 reflection leftP;
 reflection rightP;
+
 int main(int argc, char** argv) {
+	
+	WSAData wsaData;
+	WORD DLLVersion = MAKEWORD(2,1);
+	if(WSAStartup(DLLVersion, &wsaData) != 0){
+		std::cout<<"Error WSA Startup\n";
+	}
 	
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
@@ -20,14 +27,16 @@ int main(int argc, char** argv) {
 	glutInitWindowSize(settings.winWid, settings.winHeid);
 	glutCreateWindow("Ping_POng");
 	glutDisplayFunc(draw);
-	glutTimerFunc(settings.delay, Timer, 0);
+	glutTimerFunc(settings.delay, &Timer, 0);
+	//glutTimerFunc(1000, &mainSocket, 1);
 	glutKeyboardFunc(keyboardf);
 	glutKeyboardUpFunc(keyboardUpf);
 	glClearColor(0,0,0,1.0);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(-settings.orthoWid, settings.orthoWid, -settings.orthoHeid, settings.orthoHeid);
-	Hide();
+	//Hide();
+	CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)mainSocket,(LPVOID)(1), NULL, NULL);
 	glutMainLoop();
 	
 	return 0;

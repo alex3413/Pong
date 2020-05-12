@@ -69,8 +69,9 @@ void Timer (int value){
  rightP.care();
  settings.keyReset();
  glutPostRedisplay();
- glutTimerFunc(settings.delay,Timer,0);
- }
+ glutTimerFunc(settings.delay,&Timer,0);
+ 
+}
 
 
 
