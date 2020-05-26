@@ -16,9 +16,11 @@ void keyboardf(unsigned char key, int x,int y){
 			
 		case 'p':
 			rightP.up = true;
+		//	std::cout<<rightP.y<<std::endl;
 			break;
 		case 'l':
 			rightP.down = true;
+		//	std::cout<<rightP.y<<std::endl;
 		case 'm':
 			if(rightP.hold){
 				rightP.hold=false;

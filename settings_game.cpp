@@ -5,8 +5,8 @@ void game::start_settings(){
  	rightP.size = 200;
  	leftP.x= -510;
  	rightP.x = 510;
- while(ball.vx == 0)
- 	ball.vx = (rand()%3 - 1)*ballSpeedX;
+ //while(ball.vx == 0)
+ //	ball.vx = (rand()%3 - 1)*ballSpeedX;
  	
  	ball.x = 0;
  	ball.y = 0;
